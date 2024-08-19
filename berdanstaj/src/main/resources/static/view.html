@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Details</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+</head>
+<body>
+<div class="container mt-5">
+  <h1>User Details</h1>
+  <pre id="userDetails"></pre>
+  <button class="btn btn-primary" onclick="window.location.href='/admin.html'">Back to Admin</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+<script>
+  // Kullanıcı ID'sini URL'den al
+  const urlParams = new URLSearchParams(window.location.search);
+  const userId = urlParams.get('id');
+
+  // Kullanıcı bilgilerini getirme
+  fetch(`/api/user/${userId}`)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Network response was not ok ' + response.statusText);
+          }
+          return response.json();
+      })
+      .then(data => {
+          if (data) {
+              document.getElementById('userDetails').textContent = JSON.stringify(data, null, 2);
+          } else {
+              toastr.error('User not found');
+          }
+      })
+      .catch(error => {
+          console.error('There has been a problem with your fetch operation:', error);
+          toastr.error('Failed to load user details: ' + error.message);
+      });
+</script>
+</body>
+</html>

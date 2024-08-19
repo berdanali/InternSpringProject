@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Details</title>
+</head>
+<body>
+<h1>User Details</h1>
+<p><strong>ID:</strong> <span th:text="${user.id}"></span></p>
+<p><strong>Full Name:</strong> <span th:text="${user.fullname}"></span></p>
+<p><strong>Email:</strong> <span th:text="${user.email}"></span></p>
+<p><strong>Role:</strong> <span th:text="${user.role}"></span></p>
+<p><strong>Created Date:</strong> <span th:text="${user.createdDate}"></span></p>
+<p><strong>Updated Date:</strong> <span th:text="${user.updatedDate}"></span></p>
+<a href="/admin">Back to Dashboard</a>
+</body>
+</html>

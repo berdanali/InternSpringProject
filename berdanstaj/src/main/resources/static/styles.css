@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper {
+    background-image: url("https://images.unsplash.com/photo-1543193158-07c01963e800?q=80&w=2065&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.overlay {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    z-index: 1;
+}
+
+.overlay h1 {
+    font-size: 36px;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    height: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+    z-index: 2;
+    position: relative;
+}
+
+.card-header h3 {
+    color: white;
+    text-align: center;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus, select:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.form-group {
+    display: flex;
+    justify-content: center;
+    top: 20%;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+
+.links a {
+    margin-left: 4px;
+    color: #FFC312;
+    text-decoration: none;
+}
+
+.links a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+select.form-control {
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+}
